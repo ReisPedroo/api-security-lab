@@ -1,0 +1,62 @@
+# =========================
+# .NET / Visual Studio
+# =========================
+
+bin/
+obj/
+
+.vs/
+.vscode/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# =========================
+# Build / Test
+# =========================
+
+TestResults/
+coverage/
+*.trx
+
+# =========================
+# NuGet
+# =========================
+
+*.nupkg
+*.snupkg
+
+# =========================
+# Logs
+# =========================
+
+*.log
+logs/
+
+# =========================
+# Environment / Secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+# Local configuration
+# =========================
+
+appsettings.Development.json
+appsettings.Local.json
+
+# =========================
+# OS
+# =========================
+
+.DS_Store
+Thumbs.db
+desktop.ini

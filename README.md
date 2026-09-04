@@ -2,15 +2,7 @@
 
 Laboratório educacional de segurança de APIs, construído com **ASP.NET Core (.NET 10)**, **Entity Framework Core** e **PostgreSQL**.
 
-## ⚠️ Aviso importante
-
-Este projeto **introduz vulnerabilidades de propósito** para fins de aprendizado. Cada etapa documenta uma versão vulnerável de algo, explica por que ela é explorável e, em seguida, mostra a correção.
-
-- **Não use este código como referência para um sistema em produção.**
-- **Não exponha esta aplicação ou o banco de dados a redes públicas/internet.**
-- Todo o laboratório foi pensado para rodar **apenas localmente**, em `localhost`, com dados fictícios.
-
-## 📚 Sobre o projeto
+## Sobre o projeto
 
 A ideia é simples: primeiro construir uma API limpa e funcional (sem falhas conhecidas), e depois, etapa por etapa, introduzir vulnerabilidades comuns em APIs reais — demonstrar como explorá-las em um ambiente controlado, entender a causa raiz, e então corrigi-las.
 
@@ -18,20 +10,17 @@ A ideia é simples: primeiro construir uma API limpa e funcional (sem falhas con
 
 | Parte | Conteúdo | Status |
 |---|---|---|
-| 1 | Fundação: API limpa, PostgreSQL via Docker, CRUD básico de usuários | ✅ Concluída |
-| 2 | SQL Injection: implementação vulnerável, exploração e correção | 🔜 Próxima |
-| ... | Mais vulnerabilidades (a definir: auth quebrada, mass assignment, etc.) | 🔜 |
+| 1 | Fundação: API limpa, PostgreSQL via Docker, CRUD básico de usuários | Concluída |
+| 2 | SQL Injection: implementação vulnerável, exploração e correção | Próxima |
 
-O passo a passo detalhado de cada etapa fica documentado nos arquivos `ApiSecurityLab_ParteN.md` na raiz do repositório.
-
-## 🛠️ Stack
+## Stack
 
 - ASP.NET Core Web API (.NET 10)
 - Entity Framework Core + Npgsql
 - PostgreSQL (via Docker)
 - Swagger / OpenAPI
 
-## 🚀 Como rodar localmente
+## Como rodar localmente
 
 ### Pré-requisitos
 - [.NET SDK 10](https://dotnet.microsoft.com/download)
@@ -50,7 +39,7 @@ O passo a passo detalhado de cada etapa fica documentado nos arquivos `ApiSecuri
    docker compose up -d
    ```
 
-3. Configure a connection string local. O `appsettings.json` versionado **não** contém credenciais reais — para rodar localmente, crie/edite `ApiSecurityLab/appsettings.Development.json` (esse arquivo é ignorado pelo Git) com:
+3. Configure a connection string local. Para rodar localmente, crie/edite `ApiSecurityLab/appsettings.Development.json` com:
    ```json
    {
      "ConnectionStrings": {
@@ -72,6 +61,6 @@ O passo a passo detalhado de cada etapa fica documentado nos arquivos `ApiSecuri
 
 6. Abra a URL HTTPS exibida no terminal — o Swagger estará disponível lá.
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT — veja o arquivo [LICENSE](LICENSE) para mais detalhes.

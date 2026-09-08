@@ -68,8 +68,18 @@ public class AuthController : ControllerBase
     
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        // Claim NameIdentifier adicionada na Parte 4 (BOLA/IDOR): sem o id do
+        // usuário no token, o UsersController não teria como saber QUEM está
+        // fazendo a requisição para comparar com o {id} pedido na rota.
+        var claims = new[]
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Name, user.Username)
+        };
+
         var token = new JwtSecurityToken(
-            claims: new[] { new Claim(ClaimTypes.Name, user.Username) },
+            claims: claims,
             expires: DateTime.UtcNow.AddMinutes(15), // expiração curta
             signingCredentials: creds
         );

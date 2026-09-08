@@ -8,7 +8,7 @@ A ideia é simples: primeiro construir uma API limpa e funcional (sem falhas con
 | 1 | Fundação: API limpa, PostgreSQL via Docker, CRUD básico de usuários | Concluída |
 | 2 | SQL Injection: implementação vulnerável, exploração e correção | Concluída |
 | 3 | Broken Authentication: login com JWT mal configurado, exploração e correção | Concluída |
-| 4 | Broken Object Level Authorization (BOLA / IDOR) | Próxima |
+| 4 | Broken Object Level Authorization (BOLA / IDOR) | Concluída |
 | 5 | Mass Assignment & Excessive Data Exposure | Planejada |
 | 6 | Sensitive Data Exposure (senha em texto puro) | Planejada |
 | 7 | Security Misconfiguration | Planejada |
